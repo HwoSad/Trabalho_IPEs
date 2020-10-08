@@ -31,11 +31,18 @@ def novoCarro():
                 carro[atrib] = int(input("Digite quilometragem do veículo: "))
 
             #TO DO: validar kilometragem
+  
+
+
+
+
+    
         else:
             carro[atrib] = input(f"Digite {atrib} do veículo: ")
             
             while carro[atrib] == '':
                 carro[atrib] = input(f"Digite {atrib} do veículo: ")
+            
 
     print(f"Veículo inserido com sucesso!")
     input() #para poder exibir a mensagem
@@ -80,6 +87,7 @@ def excluir(listaCarros):
         print("Carro: {} | Placa: {} ".format(listaCarros[i]['nome'],listaCarros[i]['placa']))
     
     print()
+  
     
     plac = input("Digite nome da placa que você quer excluir ou Enter para sair: ")
     
@@ -95,12 +103,19 @@ def excluir(listaCarros):
         if(b > -1):
             del (listaCarros[b])
             print("removido ...")
+            for i in range(len(listaCarros)):
+                if(plac == listaCarros[i]['placa']):
+                    print("Nome:{} || Marca: {} || Placa: {} || KM: {}".format(listaCarros[i]['nome'],listaCarros[i]['marca'],listaCarros[i]['placa'],listaCarros[i]['km']))
+                    input()
+            
             excluir(listaCarros)
+           
         if(a <= 0):
             print("Placa inexistente no cadastro")    
           
-    print()
+    
     input()
+    return listaCarros
     #pass#TO DO: implementar
 
 
