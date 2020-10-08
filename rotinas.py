@@ -19,10 +19,11 @@ def exibeMenu():
 | 5 - Sair                          |
 -------------------------------------''')
 
-def novoCarro():
+def novoCarro(listaCarros):
     ''' TO DO: documentar
     '''
     carro = {"nome":'',"marca":'',"placa":'',"km":0}
+    
     for atrib in carro:
         if atrib == 'km':
             carro[atrib] = int(input("Digite quilometragem do veículo: "))
@@ -34,19 +35,47 @@ def novoCarro():
   
 
 
+        elif atrib == 'placa':
+               carro[atrib] = input("Digite a placa do veículo: ")
+               b = False
+               
+               for i in range(len(listaCarros)):
+                   if(carro[atrib] == listaCarros[i]['placa']):
+                       b = True
+                       break
+                   else: 
+                       b = False
+                       break
+                
+                        
+               while b == True:
+                   carro[atrib] = input("Digite a placa do veículo: ")
+                   for i in range(len(listaCarros)):
+                       if(carro[atrib] == listaCarros[i]['placa']):
+                           b = True
+                           break
+                       else: 
+                            b = False
+                            break
 
+
+               while carro[atrib] == '' :
+                    carro[atrib] = input("Digite a placa do veículo: ")
+                
 
     
         else:
-            carro[atrib] = input(f"Digite {atrib} do veículo: ")
+           carro[atrib] = input(f"Digite {atrib} do veículo: ")
+           
             
-            while carro[atrib] == '':
-                carro[atrib] = input(f"Digite {atrib} do veículo: ")
-            
+           while carro[atrib] == '':
+               carro[atrib] = input(f"Digite {atrib} do veículo: ")
+
+          
 
     print(f"Veículo inserido com sucesso!")
     input() #para poder exibir a mensagem
-
+    
     return carro
 
 #TO DO: escrever as funções de busca, remoção e printagem de listas

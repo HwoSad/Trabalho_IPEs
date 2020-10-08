@@ -9,8 +9,11 @@ while True:
     while(op <0 or op >5):
         op =  int(input("Digite a opção desejada:"))
 
-    if(op==1):
-        carro = rotinas.novoCarro()
+    if(op==1): 
+        
+        
+
+        carro = rotinas.novoCarro(lst_veiculos)
         lst_veiculos.append(carro)
         rotinas.limpatela()
     elif(op==2):
