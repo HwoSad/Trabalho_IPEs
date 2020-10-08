@@ -99,7 +99,7 @@ def excluir(listaCarros):
         if(a <= 0):
             print("Placa inexistente no cadastro")    
           
-    
+    print()
     input()
     #pass#TO DO: implementar
 
