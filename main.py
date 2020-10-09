@@ -6,7 +6,7 @@ lst_veiculos = [] #lista inicia vazia
 while True:
     rotinas.exibeMenu()
     op = int(input("Digite a opção desejada:"))
-    while(op <0 or op >5):
+    while(op <1 or op >5):
         op =  int(input("Digite a opção desejada:"))
 
     if(op==1): 
